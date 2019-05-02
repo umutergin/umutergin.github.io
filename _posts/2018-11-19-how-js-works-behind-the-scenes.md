@@ -112,8 +112,6 @@ The third and the last step in the creation phase is determining the value of 't
 In a regular function call and in general 'this' keyword  point at the global object which is the window object in the browser. However in a method call, 'this' variable points to the object that is calling the method WHEN it is called. One will have a better understanding of this concept when the code below is evaluated.
 
 {% highlight javascript linenos %}
-<script>
-
 console.log(this);
 
 var a={
@@ -125,8 +123,6 @@ var a={
 }
 
 a.foo();
-
-</script>
 {% endhighlight %}
 
 First usage of 'this' keyword does not belong to any method, therefore, it will point to the Window object, second usage of 'this' keyword belongs to the object 'a' so the log function will log its attributes to the console. Output of the code is shown below.
