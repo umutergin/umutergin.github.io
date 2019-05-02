@@ -14,13 +14,13 @@ Then, our javascript code gets translated into machine code. This is the general
 
 To be able to run a javascript code, we need an environment. Environments which are required to run javascript are usually called Execution Contexts. One can think of execution context as a wrapper in which our code gets evaluated and executed. The default execution context is called the Global Execution Context, which is usually the windows object in browsers. In javascript, the code that is NOT in any function, belongs to the global object. So, declaring a variable called A is the same thing as window.A as shown below.
 
-{% highlight css linenos %}
+{% highlight html linenos %}
 A === window.A;
 {% endhighlight %}
 
 Each time we write a function in the global execution context, a new execution context is added to the execution stack. So, if one creates a code like this;
 
-{% highlight css linenos %}
+{% highlight html linenos %}
 var a=3;
 
 function() {
@@ -41,7 +41,7 @@ Javascript engine creates the execution context in the following 2 stages, first
 
 There are 3 major steps that happens in the creation phase. Firstly, an object called Variable Object gets created. In this step, code is scanned for function and variable declarations. For each variable or function, a property is created in the Varible Object and for variables, it is set to undefined. This process is also referred to as "hoisting". This also means that functions and variables are availabe before execution of the code in javascript. This means that the code below,
 
-{% highlight css linenos %}
+{% highlight html linenos %}
 function pow(a) {
 	console.log(a*a);
 }
@@ -51,7 +51,7 @@ pow(2);
 
 is the same as this code.
 
-{% highlight css linenos %}
+{% highlight html linenos %}
 pow(2);
 
 function pow(a) {
@@ -64,7 +64,7 @@ In many other programming languages, the second example would throw an error lik
 
 However, it is a little bit different with the variables. Let's look at the code below,
 
-{% highlight css linenos %}
+{% highlight html linenos %}
 console.log(a);
 var a=1;
 console.log(a);
@@ -81,7 +81,7 @@ Generally speaking, the most important use case for hoisting is not variables bu
 
 Second step in the creation phase is creation of Scope Chain. This step is the answer of "Where can we access a certain variable or function?" In javascript, each function creates a scope, which is an environment in which the variables that it defines are accessible. Also, each function can access to its parent functions scope. What do I mean by this? Let's check the code below.
 
-{% highlight css linenos %}
+{% highlight html linenos %}
 var a=1;
 
 first();
@@ -111,7 +111,7 @@ The third and the last step in the creation phase is determining the value of 't
 
 In a regular function call and in general 'this' keyword  point at the global object which is the window object in the browser. However in a method call, 'this' variable points to the object that is calling the method WHEN it is called. One will have a better understanding of this concept when the code below is evaluated.
 
-{% highlight css linenos %}
+{% highlight html linenos %}
 <script>
 
 console.log(this);
