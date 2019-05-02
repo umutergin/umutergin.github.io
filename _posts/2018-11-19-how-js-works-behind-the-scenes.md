@@ -5,7 +5,7 @@ title: Unveiling the Curtain | How Javascript works behind the scenes?
 So you clicked run or you refreshed your browser, what happens?
 
 
-First, code gets read line by line by a parser, checking for syntax errors first. If it encounters an error, instead of finishing the entire code, it quickly throws an error and stops the execution. If it does not encounters any errors, parser produces a data structure known as Abstract Syntax Tree-
+First, code gets read line by line by a parser, checking for syntax errors first. If it encounters an error, instead of finishing the entire code, it quickly throws an error and stops the execution. If it does not encounters any errors, parser produces a data structure known as Abstract Syntax Tree.
 >In computer science, an abstract syntax tree (AST), or just syntax tree, is a tree representation of the abstract syntactic structure of source code written in a programming language. Each node of the tree denotes a construct occurring in the source code.
 
 Then, our javascript code gets translated into machine code. This is the general idea.
@@ -29,7 +29,7 @@ function() {
 
 The objects and the execution stack would look like this.
 
-![image](/img/scopechain2.png)
+![image](/img/Emerald01.png)
 
 
 Let's dive a little bit deeper into execution context.
@@ -71,12 +71,11 @@ console.log(a);
 
 The output of the code is shown as,
 
-Picture
+![image](/img/variable-undfined.png)
 
 For the first line, we get an 'undefined'. This is because, variables are set to 'undefined' in the creation phase. Third line is processed as normal and variable 'a' is logged as 1. 
 
 Generally speaking, the most important use case for hoisting is not variables but function declarations.
-
 
 Second step in the creation phase is creation of Scope Chain. This step is the answer of "Where can we access a certain variable or function?" In javascript, each function creates a scope, which is an environment in which the variables that it defines are accessible. Also, each function can access to its parent functions scope. What do I mean by this? Let's check the code below.
 
@@ -98,11 +97,11 @@ function first() {
 
 Here is the output of the course.
 
-Picture
+![image](/img/scopechain1.png)
 
 Lexically speaking, variable 'c' is declared in function second's scope, variable 'b' is declared in function first's scope and variable 'a' is declared in the global scope. Since the console.log() function is called in function second, it has access to its parent function scope which is function first and it has access to global scope therefore, making it able to access all 3 variables, a, b and c. However, this does NOT work backwards.
 
-Picture
+![image](/img/scopechain2.png)
 
 Hence, the name, Scope Chain.
 
@@ -126,7 +125,7 @@ a.foo();
 
 First usage of 'this' keyword does not belong to any method, therefore, it will point to the Window object, second usage of 'this' keyword belongs to the object 'a' so the log function will log its attributes to the console. Output of the code is shown below.
 
-Picture
+![image](/img/thiskeyword.png)
 
 
 2-Execution Phase
