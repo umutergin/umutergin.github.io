@@ -24,7 +24,7 @@ Each time we write a function in the global execution context, a new execution c
 var a=3;
 
 function() {
-	b = a + 2;
+	b=a+2;
 }
 {% endhighlight %}
 
@@ -66,7 +66,7 @@ However, it is a little bit different with the variables. Let's look at the code
 
 {% highlight css linenos %}
 console.log(a);
-var a = 1;
+var a=1;
 console.log(a);
 {% endhighlight %}
 
@@ -82,17 +82,17 @@ Generally speaking, the most important use case for hoisting is not variables bu
 Second step in the creation phase is creation of Scope Chain. This step is the answer of "Where can we access a certain variable or function?" In javascript, each function creates a scope, which is an environment in which the variables that it defines are accessible. Also, each function can access to its parent functions scope. What do I mean by this? Let's check the code below.
 
 {% highlight css linenos %}
-var a = 1;
+var a=1;
 
 first();
 
 function first() {
-	var b = 2;
+	var b=2;
 	second();
 
 	function second() {
-		var c = 3;
-		console.log(a + b + c);
+		var c=3;
+		console.log(a+b+c);
 	}
 }
 {% endhighlight %}
@@ -116,7 +116,7 @@ In a regular function call and in general 'this' keyword  point at the global ob
 
 console.log(this);
 
-var a = {
+var a={
 	name: 'a',
     value: 1,
     foo: function() {
