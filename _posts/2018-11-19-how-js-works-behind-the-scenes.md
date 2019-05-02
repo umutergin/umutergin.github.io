@@ -6,8 +6,7 @@ So you clicked run or you refreshed your browser, what happens?
 
 
 First, code gets read line by line by a parser, checking for syntax errors first. If it encounters an error, instead of finishing the entire code, it quickly throws an error and stops the execution. If it does not encounters any errors, parser produces a data structure known as Abstract Syntax Tree-
-
-In computer science, an abstract syntax tree (AST), or just syntax tree, is a tree representation of the abstract syntactic structure of source code written in a programming language. Each node of the tree denotes a construct occurring in the source code.
+>In computer science, an abstract syntax tree (AST), or just syntax tree, is a tree representation of the abstract syntactic structure of source code written in a programming language. Each node of the tree denotes a construct occurring in the source code.
 
 Then, our javascript code gets translated into machine code. This is the general idea.
 
