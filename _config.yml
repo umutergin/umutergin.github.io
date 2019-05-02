@@ -29,8 +29,6 @@ defaults:
 gems:
   - jekyll-paginate
 
-# Custom variables
-version: "1.1.0"
 
 # Options
 custom_header: false
