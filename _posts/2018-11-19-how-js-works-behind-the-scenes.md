@@ -29,7 +29,7 @@ function() {
 
 The objects and the execution stack would look like this.
 
-![image](/img/Emerald01.png)
+![image](/img/Emeral.png)
 
 
 Let's dive a little bit deeper into execution context.
