@@ -1,5 +1,5 @@
 ---
-title: Unveiling the curtain - How Javascript works behind the scenes?
+title: Unveiling the Curtain | How Javascript works behind the scenes?
 ---
 
 So you clicked run or you refreshed your browser, what happens?
