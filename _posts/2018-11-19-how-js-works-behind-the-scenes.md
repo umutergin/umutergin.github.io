@@ -30,7 +30,7 @@ function() {
 
 The objects and the execution stack would look like this.
 
-Picture
+![image](/img/scopechain2.png)
 
 
 Let's dive a little bit deeper into execution context.
