@@ -116,9 +116,9 @@ console.log(this);
 
 var a={
 	name: 'a',
-    value: 1,
-    foo: function() {
-    	console.log(this);
+    	value: 1,
+    	foo: function() {
+    		console.log(this);
     }
 }
 
