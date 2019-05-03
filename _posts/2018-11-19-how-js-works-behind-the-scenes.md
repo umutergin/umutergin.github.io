@@ -20,16 +20,26 @@ A === window.A;
 Each time we write a function in the global execution context, a new execution context is added to the execution stack. So, if one creates a code like this;
 
 {% highlight javascript linenos %}
-var a=3;
-
-function() {
-	b=a+2;
+function A(){
+        console.log('In the function A execution stack.')
+	B();
+	console.log('In the function A execution stack.')
 }
+
+function B(){
+        console.log('In the function B execution stack.')
+}
+A();
+console.log('In the Global Execution Stack')
 {% endhighlight %}
 
 The objects and the execution stack would look like this.
 
-![image](/img/Emeral.png)
+![image](/img/execution-context-diagram.png)
+
+Here is what we see on the browser console when we run this code.
+
+![image](/img/execution-context-code.png)
 
 
 Let's dive a little bit deeper into execution context.
@@ -38,7 +48,8 @@ Javascript engine creates the execution context in the following 2 stages, first
 
 ## 1-Creation Phase
 
-There are 3 major steps that happens in the creation phase. Firstly, an object called Variable Object gets created. In this step, code is scanned for function and variable declarations. For each variable or function, a property is created in the Varible Object and for variables, it is set to undefined. This process is also referred to as "hoisting". This also means that functions and variables are availabe before execution of the code in javascript. This means that the code below,
+
+There are 3 major steps that happens in the creation phase. Firstly, an object called Variable Object gets created. In this step, code is scanned for function and variable declarations. For each variable or function, a property is created in the Varible Object and for variables, it is set to undefined. This process is also referred to as "**hoisting**". This also means that functions and variables are availabe before execution of the code in javascript. This means that the code below,
 
 {% highlight javascript linenos %}
 function pow(a) {
@@ -77,7 +88,7 @@ For the first line, we get an 'undefined'. This is because, variables are set to
 
 Generally speaking, the most important use case for hoisting is not variables but function declarations.
 
-Second step in the creation phase is creation of Scope Chain. This step is the answer of "Where can we access a certain variable or function?" In javascript, each function creates a scope, which is an environment in which the variables that it defines are accessible. Also, each function can access to its parent functions scope. What do I mean by this? Let's check the code below.
+Second step in the creation phase is creation of **Scope Chain**. This step is the answer of "Where can we access a certain variable or function?" In javascript, each function creates a scope, which is an environment in which the variables that it defines are accessible. Also, each function can access to its parent functions scope. What do I mean by this? Let's check the code below.
 
 {% highlight javascript linenos %}
 var a=1;
@@ -129,6 +140,7 @@ First usage of 'this' keyword does not belong to any method, therefore, it will 
 
 
 ## 2-Execution Phase
+
 
 In this stage, assignments to all variables and functions are done and the code gets converted into machine executable instructions. But how?
 
