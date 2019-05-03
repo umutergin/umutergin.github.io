@@ -36,7 +36,7 @@ Let's dive a little bit deeper into execution context.
 
 Javascript engine creates the execution context in the following 2 stages, first being creation phase and second being execution phase. One can think of these stages as properties of execution context.
 
-1-Creation Phase
+## 1-Creation Phase
 
 There are 3 major steps that happens in the creation phase. Firstly, an object called Variable Object gets created. In this step, code is scanned for function and variable declarations. For each variable or function, a property is created in the Varible Object and for variables, it is set to undefined. This process is also referred to as "hoisting". This also means that functions and variables are availabe before execution of the code in javascript. This means that the code below,
 
@@ -128,7 +128,7 @@ First usage of 'this' keyword does not belong to any method, therefore, it will 
 ![image](/img/thiskeyword.png)
 
 
-2-Execution Phase
+## 2-Execution Phase
 
 In this stage, assignments to all variables and functions are done and the code gets converted into machine executable instructions. But how?
 
