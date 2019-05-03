@@ -37,6 +37,7 @@ The objects and the execution stack would look like this.
 
 ![image](/img/execution-context-diagram.png)
 
+First, we have our global context on the execution stack. Then, Function A is called, an execution context that belongs to Function A gets added to execution stack. Then when we are in Function A, Function B gets called, thus, Function B execution context is added to execution stack.
 Here is what we see on the browser console when we run this code.
 
 ![image](/img/execution-context-code.png)
@@ -138,4 +139,8 @@ First usage of 'this' keyword does not belong to any method, therefore, it will 
 ## 2-Execution Phase
 In this stage, assignments to all variables and functions are done and the code gets converted into machine executable instructions. But how?
 
-It is important to know that Javascript is single threaded, that means only one statement is executed at a time. As the javascript engine processes the code line by line, it uses the execution stack to keep track of codes that are supposed to run in their respective order. 
+It is important to know that Javascript is single threaded, that means only one statement is executed at a time. As the javascript engine processes the code line by line, it uses the execution stack to keep track of codes that are supposed to run in their respective order. In Chrome, every tab is a single Javascript thread and that thread is responsible for every action like scrolling, listening for mouse clicks, etc. When this execution stops, Chrome will throw an error similar to image below.
+
+![image](/img/google-chrome-pages-unresponsive.png)
+
+
