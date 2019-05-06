@@ -139,8 +139,14 @@ First usage of 'this' keyword does not belong to any method, therefore, it will 
 ## 2-Execution Phase
 In this stage, assignments to all variables and functions are done and the code gets converted into machine executable instructions. But how?
 
-It is important to know that Javascript is single threaded, that means only one statement is executed at a time. As the javascript engine processes the code line by line, it uses the execution stack to keep track of codes that are supposed to run in their respective order. In Chrome, every tab is a single Javascript thread and that thread is responsible for every action like scrolling, listening for mouse clicks, etc. When this execution stops, Chrome will throw an error similar to image below.
+It is important to know that Javascript is single threaded, that means only one statement is executed at a time. As the javascript engine processes the code line by line, it uses the execution stack to keep track of codes that are supposed to run in their respective order. This way of doing one thing before another is called **Synchronous**. In Chrome, every tab is a single Javascript thread and that thread is responsible for every action like scrolling, listening for mouse clicks, etc. When this execution stops, Chrome will throw an error similar to image below.
 
 ![image](/img/google-chrome-pages-unresponsive.png)
 
+Since Javascript is a synchronous programming language, it can only do one thing at any given time. Let's say that a program wants to execute a SQL query that pulls lots of records from the database. This request will take a long time, and remember, Javascript is synchronous, does that mean page waits for that SQL request to complete before doing anything else? Well, yes and no. Javascript does one thing at a time, it is true, but there are some solutions for this.
 
+Modern browsers have Web APIs for Javascript to perform operations in the background while continue to execute the rest of Javascript code. While running javascript code, if a function contains a web api call, that function will be commissioned to the web api with an associated callback function. A callback function is literally derived from calling back. It means once its done with the task, it will call back and deliver the requested content. After entrusting the related function to web api, javascript code continues to get executed normally. Once the execution stack is emptpy, callback functions get pushed into the stack and callback function will be executed, returning the requested content. This process of checking the callback queue to push them into the execution stack if the stack is empty called the Event Loop.
+
+Philip Roberts has an awesome site which he explains the event loop. Here is the link below.
+
+http://latentflip.com/loupe/?code=ZnVuY3Rpb24gcHJpbnRIZWxsbygpIHsNCiAgICBjb25zb2xlLmxvZygnSGVsbG8gZnJvbSBiYXonKTsNCn0NCg0KZnVuY3Rpb24gYmF6KCkgew0KICAgIHNldFRpbWVvdXQocHJpbnRIZWxsbywgMzAwMCk7DQp9DQoNCmZ1bmN0aW9uIGJhcigpIHsNCiAgICBiYXooKTsNCn0NCg0KZnVuY3Rpb24gZm9vKCkgew0KICAgIGJhcigpOw0KfQ0KDQpmb28oKTs%3D!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D
