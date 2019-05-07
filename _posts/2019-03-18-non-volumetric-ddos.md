@@ -1,5 +1,5 @@
 ---
-title: Small text
+title: Non-Volumetric DDoS: The Elegant Way
 ---
 
 
