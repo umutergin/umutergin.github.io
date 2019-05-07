@@ -1,5 +1,5 @@
 ---
-title: Non-Volumetric DDoS: The Elegant Way
+title: Non-Volumetric DDoS - The Elegant Way
 ---
 
 
