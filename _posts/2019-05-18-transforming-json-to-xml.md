@@ -1,5 +1,5 @@
 ---
-title: A Study in Alchemy - Transforming JSON Requests to XML for Exploitation(Google CTF)
+title: A Study in Alchemy | Transforming JSON Requests to XML for Exploitation(Google CTF)
 ---
 
 When I was playing with Google ctf challenges I have come across a rather simple but unorthodox challenge that required some good old out of the box thinking. Upon entering the challenge page, you're welcomed by a message intended for blind people using the braille alphabet. Also, there is a dropdown menu which you can select 3 different cities and a submit button.
@@ -12,23 +12,23 @@ When you intercept the traffic and take a look at the submit request, it is obse
 
 After trying all three cities, it is found that;
 
-For Zurich
-{"message":"135601360123502401401250"}
-For Bangalore
-{"message":"120101345012450101230135012350150"}
-For Paris
-{"message":"1234010123502402340"}
+For Zurich  
+{"message":"135601360123502401401250"}  
+For Bangalore  
+{"message":"120101345012450101230135012350150"}  
+For Paris  
+{"message":"1234010123502402340"}  
 
 Since the web page contained a message in braille alphabet, I tried to decipher messages according to [braille.](https://www.pharmabraille.com/pharmaceutical-braille/the-braille-alphabet/)
 
 ![image](/img/braille-ss3.png)
 
-z is 1356
-u is 136
-r is 1235
-i is 24
-c is 14
-h is 1235
+z is 1356  
+u is 136  
+r is 1235  
+i is 24  
+c is 14  
+h is 1235  
 
 As you can deduce, letter numbers are joined with 0, forming the corresponding cities. After this information, I have tried to post various messages including "flag", "google" etc, but it did not get me any succesful results. I have also tried other vulnerabilities like SQL injection but again, they failed me and I finally got to subject of this post.
 
