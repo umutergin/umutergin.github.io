@@ -12,11 +12,11 @@ When you intercept the traffic and take a look at the submit request, it is obse
 
 After trying all three cities, it is found that;
 
-Zurich is {"message":"135601360123502401401250"}
-Bangalore is {"message":"120101345012450101230135012350150"}
-Paris is {"message":"1234010123502402340"}
+Zurich is {"message":"135601360123502401401250"}\n
+Bangalore is {"message":"120101345012450101230135012350150"}\n
+Paris is {"message":"1234010123502402340"}\n
 
-Since the web page contained a message in braille alphabet, I tried to decipher messages according to [braille.] (https://www.pharmabraille.com/pharmaceutical-braille/the-braille-alphabet/)
+Since the web page contained a message in braille alphabet, I tried to decipher messages according to [braille.](https://www.pharmabraille.com/pharmaceutical-braille/the-braille-alphabet/)
 
 ![image](/img/braille-ss3.png)
 
