@@ -2,7 +2,7 @@
 title: A Study in Alchemy - Transforming JSON Requests to XML for Exploitation(Google CTF)
 ---
 
-When I was playing with Google ctf challenges I have come across a rather simple but unorthodox challenge that required some good old out of the box thinking. Upon entering the challenge page, you're welcomed by a message intended for blind people using the braille alphabet(). Also, there is a dropdown menu which you can select 3 different cities and a submit button.
+When I was playing with Google ctf challenges I have come across a rather simple but unorthodox challenge that required some good old out of the box thinking. Upon entering the challenge page, you're welcomed by a message intended for blind people using the braille alphabet. Also, there is a dropdown menu which you can select 3 different cities and a submit button.
 
 ![image](/img/webpage.png)
 
@@ -12,9 +12,12 @@ When you intercept the traffic and take a look at the submit request, it is obse
 
 After trying all three cities, it is found that;
 
-Zurich is {"message":"135601360123502401401250"}\n
-Bangalore is {"message":"120101345012450101230135012350150"}\n
-Paris is {"message":"1234010123502402340"}\n
+For Zurich
+{"message":"135601360123502401401250"}
+For Bangalore
+{"message":"120101345012450101230135012350150"}
+For Paris
+{"message":"1234010123502402340"}
 
 Since the web page contained a message in braille alphabet, I tried to decipher messages according to [braille.](https://www.pharmabraille.com/pharmaceutical-braille/the-braille-alphabet/)
 
@@ -37,7 +40,7 @@ I have tried to transmit request using XML format by changing the Content-type: 
 
 It is best to transform original JSON request to XML version, then it is easier to fiddle for XXE.
 
-![image](/imgjsonToxml-ss8.png)
+![image](/img/jsonToxml-ss8.png)
 
 At this point, I am aware that application is parsing XML, knowing this, I have tried various XXE methods using external DTD files but none of them gave any result. Then I decided to try loading internal DTDs. To be able to exploit an internal DTD file, there is an awesome tutorial on the [Web Security Academy](https://portswigger.net/web-security/xxe/blind/lab-xxe-trigger-error-message-by-repurposing-local-dtd) page. On linux systems, DTD file is present under directory /usr/share/yelp/dtd/ and it contains several entities including ISOamsa, ISOamsb, etc. 
 
