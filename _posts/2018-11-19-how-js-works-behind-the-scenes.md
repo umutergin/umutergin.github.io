@@ -2,7 +2,7 @@
 title: Unveiling the Curtain | How Javascript works behind the scenes?
 ---
 
-So you clicked run or you refreshed your browser, what happens?
+So you clicked run or you refreshed your browser, what happens in the background?
 
 
 First, code gets read line by line by a parser, checking for syntax errors first. If it encounters an error, instead of finishing the entire code, it quickly throws an error and stops the execution. If it does not encounters any errors, parser produces a data structure known as Abstract Syntax Tree.
