@@ -56,7 +56,7 @@ Request is considered simple and If the request is simple, browser can send the 
 
 Now I know this is a bit confusing, think of it like a TCP handshake. Browser and the server are trying to negotiate on the terms of how to share resources. Here is a simple flowchart of this process, taken from Wikipedia. Think of green zone request as simple request, red zone request as preflight requests.
 
-![image](/img/simple-preflight-requests.svg)
+![image](/img/simple-preflight-requests.png)
 
 
 An even simpler one, taken from AWS docs.
