@@ -9,19 +9,19 @@ title: The Browsers Yin and Yang | Security Considerations on SOP and CORS
 First of all, lets start out with specifying base concepts.
 
 
-# What is Same-Origin-Policy?
+## What is Same-Origin-Policy?
 
 The same-origin policy is a critical security mechanism that restricts how a document or script loaded from one origin can interact with a resource from another origin.
 
 
 
-# What is an origin?
+## What is an origin?
 
 Two URLs have the same origin if the protocol, port (if specified), and host are the same for both. This means that if two URL is using
-
-**https:// scheme
-both have the same host like **mail.google.com
-operating on the same port like **:443 
+###
+- **https:// scheme
+- both have the same host like **mail.google.com
+- operating on the same port like **:443 
 
 these two URLs have the same origin. 
 
@@ -31,20 +31,20 @@ these two URLs have the same origin.
 There are some rules for changing origin from a subdomain to its parent domain, E.g: mail.google.com to google.com. To be able to change the origin, it is required to set document.domain to same value in both parent domain and subdomain. However, it is not allowed to change domain from google.com to yahoo.com. For more information, see [document.domain.](https://developer.mozilla.org/en-US/docs/Web/API/Document/domain)
 
 
-# Why, Same-Origin-Policy?
+## Why, Same-Origin-Policy?
 
 HTTP requests that are sent from one origin to a different one are called cross-origin requests. SOP was implemented to prevent this kind of cross-origin requests because of potential security flaws like [CSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)), [Clickjacking](https://www.owasp.org/index.php/Clickjacking) etc. However, as web applications became more complicated and interconnected and tangled, need for cross-origin requests initiated by JavaScript became a necessity. To loosen the rules layed by Same-Origin-Policy and to enable cross-origin requests, standard for Cross-Origin Resource Sharing(CORS) was introduced.
 
-# How to make a CORS Request? More importantly, Why make a CORS Request?
+## How to make a CORS Request? More importantly, Why make a CORS Request?
 
 As for why, it is pretty simple. Let's say that you want to use a CDN tp boost your website performance. If you are using a CDN like Cloudflare, your site needs to load some assets(images, css files, etc.) externally to take the load off of your servers. In order to do this, website needs to be able to send a cross-origin request to Cloudflare to retrieve the assets your web page needs.
 
 
-As for how, CORS standard says that there are 2 type of requests when dealing with cross-origin requests. First one is called **simple request. If;
-
--HTTP method is GET/HEAD/POST
--Request contains standard headers like Accept, Accept Language, Content-Language, Content-Type, [etc](https://fetch.spec.whatwg.org/#cors-safelisted-request-header)
--Request submits content type as "application/x-www-form-urlencoded","multipart/form-data" or "text/plain" (types that can be submitted by HTML forms)
+As for how, CORS standard says that there are 2 type of requests when dealing with cross-origin requests. First one is called simple request. If;
+###
+- HTTP method is GET/HEAD/POST
+- Request contains standard headers like Accept, Accept Language, Content-Language, Content-Type, [etc](https://fetch.spec.whatwg.org/#cors-safelisted-request-header)
+- Request submits content type as "application/x-www-form-urlencoded","multipart/form-data" or "text/plain" (types that can be submitted by HTML forms)
 
 the request is considered simple and If the request is simple, browser can send the request to an external origin, but target's CORS policy must allow the request as well. If the request is not simple, browser must do a preflight request with OPTIONS method and appropriate CORS headers to negotiate transmission rules. If target's CORS policy does not allow the request, then browser must refuse to send the actual request. Targets should respond to a cross-origin request with the following headers:
 
