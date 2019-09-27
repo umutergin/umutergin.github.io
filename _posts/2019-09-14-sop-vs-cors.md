@@ -18,7 +18,7 @@ The same-origin policy is a critical security mechanism that restricts how a doc
 ## What is an origin?
 
 Two URLs have the same origin if the protocol, port (if specified), and host are the same for both. This means that if two URL is using
-###
+
 - **https://** scheme
 - both have the same host like **mail.google.com**
 - operating on the same port like **:443** 
