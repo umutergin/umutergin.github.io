@@ -17,9 +17,9 @@ The same-origin policy is a critical security mechanism that restricts how a doc
 
 # What is an origin?
 
-Two URLs have the same origin if the protocol, port (if specified), and host are the same for both. This means that if
+Two URLs have the same origin if the protocol, port (if specified), and host are the same for both. This means that if two URL is using
 
-two URL is using **https:// scheme
+**https:// scheme
 both have the same host like **mail.google.com
 operating on the same port like **:443 
 
@@ -28,7 +28,7 @@ these two URLs have the same origin.
 
 ![image](/img/origins.png)
 
-There are some rules for changing origin from a subdomain to its parent domain, E.g: mail.google.com to google.com. To be able to change the origin, it is required to set **document.domain to same value in both parent domain and subdomain. However, it is not allowed to change domain from **google.com to **yahoo.com. For more information, see document.domain. (https://developer.mozilla.org/en-US/docs/Web/API/Document/domain)
+There are some rules for changing origin from a subdomain to its parent domain, E.g: mail.google.com to google.com. To be able to change the origin, it is required to set document.domain to same value in both parent domain and subdomain. However, it is not allowed to change domain from google.com to yahoo.com. For more information, see [document.domain.](https://developer.mozilla.org/en-US/docs/Web/API/Document/domain)
 
 
 # Why, Same-Origin-Policy?
@@ -48,9 +48,10 @@ As for how, CORS standard says that there are 2 type of requests when dealing wi
 
 the request is considered simple and If the request is simple, browser can send the request to an external origin, but target's CORS policy must allow the request as well. If the request is not simple, browser must do a preflight request with OPTIONS method and appropriate CORS headers to negotiate transmission rules. If target's CORS policy does not allow the request, then browser must refuse to send the actual request. Targets should respond to a cross-origin request with the following headers:
 
--Access-Control-Allow-Origin: either a single allowed origin or a wildcard (*) indicating all origins; servers may change the value depending on the Origin of the request
--Access-Control-Allow-Credentials: indicating if the browser is allowed to send cookies with the request; if omitted, defaults to false; cannot be true if Access-Control-Allow-Origin is *
--Access-Control-Allow-Headers: comma-separated list of allowed headers
+###
+- Access-Control-Allow-Origin: either a single allowed origin or a wildcard (*) indicating all origins; servers may change the value depending on the Origin of the request
+- Access-Control-Allow-Credentials: indicating if the browser is allowed to send cookies with the request; if omitted, defaults to false; cannot be true if Access-Control-Allow-Origin is *
+- Access-Control-Allow-Headers: comma-separated list of allowed headers
 
 Now I know this is a bit confusing, think of it like a TCP handshake. Browser and the server are trying to negotiate on the terms of how to share resources. Here is a simple flowchart of this process, taken from Wikipedia. Think of green zone request as simple request, red zone request as preflight requests.
 
