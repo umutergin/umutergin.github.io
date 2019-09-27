@@ -19,9 +19,9 @@ The same-origin policy is a critical security mechanism that restricts how a doc
 
 Two URLs have the same origin if the protocol, port (if specified), and host are the same for both. This means that if two URL is using
 ###
-- **https:// scheme
-- both have the same host like **mail.google.com
-- operating on the same port like **:443 
+- **https://** scheme
+- both have the same host like **mail.google.com**
+- operating on the same port like **:443** 
 
 these two URLs have the same origin. 
 
@@ -41,12 +41,13 @@ As for why, it is pretty simple. Let's say that you want to use a CDN tp boost y
 
 
 As for how, CORS standard says that there are 2 type of requests when dealing with cross-origin requests. First one is called simple request. If;
+
 ###
 - HTTP method is GET/HEAD/POST
-- Request contains standard headers like Accept, Accept Language, Content-Language, Content-Type, [etc](https://fetch.spec.whatwg.org/#cors-safelisted-request-header)
+- Request contains standard headers like Accept, Accept Language, Content-Language, Content-Type, for more information on these headers you can check [here.](https://fetch.spec.whatwg.org/#cors-safelisted-request-header)
 - Request submits content type as "application/x-www-form-urlencoded","multipart/form-data" or "text/plain" (types that can be submitted by HTML forms)
 
-the request is considered simple and If the request is simple, browser can send the request to an external origin, but target's CORS policy must allow the request as well. If the request is not simple, browser must do a preflight request with OPTIONS method and appropriate CORS headers to negotiate transmission rules. If target's CORS policy does not allow the request, then browser must refuse to send the actual request. Targets should respond to a cross-origin request with the following headers:
+Request is considered simple and If the request is simple, browser can send the request to an external origin, but target's CORS policy must allow the request as well. If the request is not simple, browser must do a preflight request with OPTIONS method and appropriate CORS headers to negotiate transmission rules. If target's CORS policy does not allow the request, then browser must refuse to send the actual request. Targets should respond to a cross-origin request with the following headers:
 
 ###
 - Access-Control-Allow-Origin: either a single allowed origin or a wildcard (*) indicating all origins; servers may change the value depending on the Origin of the request
