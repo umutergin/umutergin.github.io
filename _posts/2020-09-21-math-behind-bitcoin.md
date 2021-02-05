@@ -25,10 +25,11 @@ In the system of Public Key Infrastructure(PKI), everyone generates a private ke
 
 {% highlight javascript linenos %}
 Sign(Message, SecretKey) = Signature
-Verify(Message, Signature, Public Key) = True OR False(If true, it is signed, If false, it is not signed)
+Verify(Message, Signature, Public Key) = True OR False
+(If true, it is signed, If false, it is not signed)
 {% endhighlight %}
 
-For the curious, formula and complex mathematics behind this is explained [here.](https://en.wikipedia.org/wiki/Digital_Signature_Algorithm#:~:text=The%20Digital%20Signature%20Algorithm%20(DSA,Schnorr%20and%20ElGamal%20signature%20schemes)
+For the curious, formula and complex mathematics behind this is explained [here](https://en.wikipedia.org/wiki/Digital_Signature_Algorithm#:~:text=The%20Digital%20Signature%20Algorithm%20(DSA,Schnorr%20and%20ElGamal%20signature%20schemes)
 Now, for someone to imitate someone elses signature, there are 2*256 combinations to try. This number is so huge that there are no correct english words to describe it. It would be impossibly low of a chance to “guess” someone elses digital signature. For this reason, using a digital signature is much more secure than using a handwritten one. So, why not build a system out of this?
 
 
@@ -42,7 +43,11 @@ Let’s imagine a group of friends, X, Y, Z. These friends often lend each other
 Here are some transactions between them;
 
 X pays $10 to Y.
+
+
 Y pays $20 to Z.
+
+
 
 After these transactions, X has $40, Y has $40 and Z has $60. Bitcoin ledgers also works like this. It follows the transactions that are made in the list to calculate who has how much. Now X, Y and Z could be really good friends and agree on a consensus, but in real world, for a system to be enable reliable currency exchange, trust is the most important aspect to present. What if X decides to spent more than he/she has? What if Y decides to alter the ledger alltogether? Who controls the rules of adding new lines to the list?
 
