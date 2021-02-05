@@ -18,8 +18,11 @@ Modern signature did not became what it is today until 1677 with The Statue of F
 ## Digital Signatures and Public Key Infrastructure
 
 Like written signatures, idea is that someone should be able to perform or confirm an action in his/her name and since this is electronical, it should be infeasible for anyone else to forge his/her signature. There are 2 important elements while building a system like this. 
+
 1-	Security and Authenticity: Signatures should be unique and inimitable
+
 2-	Performance: It should be conveniently fast, no one will wait for you to sign something for hours.
+
 
 In the system of Public Key Infrastructure(PKI), everyone generates a private key and a public key. These keys are both bunch of ones and zeroes and typically they consist of 256 bits. Private keys are also called Secret keys for convenience. Secret keys are used for signing of a digital document and public keys are used for verifying of a digital document. Although algorithms performs this task differently, general idea is something like this.
 
