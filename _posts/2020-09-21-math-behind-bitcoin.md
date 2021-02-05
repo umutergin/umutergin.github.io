@@ -7,7 +7,7 @@ When you think about it, signature is a really weird concept to get your head ar
 In the modern world, signature represents you as a unique identity. 
 
 
-## Rise of Wax Seals and Signature
+## Wax Seals and Signature
 
 The wax seal became more popularized in the Middle Ages. It was typically used by nobility or clergy members, such as monarchs, royal representatives, and bishops. A wax seal often provided a level of authentication to a document, such as a contract or an official letter. Like signatures, each seal was completely unique to its owner. Though the Latin alphabet was already invented, a lot of people remained illiterate. As the wax seal gained more popularity and began to be more frequently used. Among common people, it was a good alternative for those who didn’t know how to read or write.
 
