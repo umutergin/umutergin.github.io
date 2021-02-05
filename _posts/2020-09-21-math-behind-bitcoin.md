@@ -74,15 +74,22 @@ Now, we have a system for authenticating as who we are(signatures) and we have a
 Bitcoin’s solution to this problem is to trust whichever ledger has the most computational work put into system. The idea is, if you use computational work as a basis for what to trust, you can make it so that fraudulent transactions and conflicting ledgers would require an infeasible amount of computation. Let’s dissect this sentences with an example. Imagine a ledger like this,
 
 X pays $40 to Y.
+
 Y pays $30 to Z.
+
 Z pays $25 to T.
+
 
 Whoever that broadcasted this ledger adds a special number at the end of the transaction like this. 
 
 X pays $40 to Y.
+
 Y pays $30 to Z.
+
 Z pays $25 to T.
+
 7896245679645
+
 
 And he/she claims that if you calculate the hash of this ledger, first 32 bits are all zeroes, like this.
 
