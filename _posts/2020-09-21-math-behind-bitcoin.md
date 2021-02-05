@@ -29,7 +29,7 @@ Verify(Message, Signature, Public Key) = True OR False
 (If true, it is signed, If false, it is not signed)
 {% endhighlight %}
 
-For the curious, formula and complex mathematics behind this is explained [here](https://en.wikipedia.org/wiki/Digital_Signature_Algorithm#:~:text=The%20Digital%20Signature%20Algorithm%20(DSA,Schnorr%20and%20ElGamal%20signature%20schemes)
+For the curious, formula and complex mathematics behind this is explained [here](https://en.wikipedia.org/wiki/Digital_Signature_Algorithm)
 Now, for someone to imitate someone elses signature, there are 2*256 combinations to try. This number is so huge that there are no correct english words to describe it. It would be impossibly low of a chance to “guess” someone elses digital signature. For this reason, using a digital signature is much more secure than using a handwritten one. So, why not build a system out of this?
 
 
