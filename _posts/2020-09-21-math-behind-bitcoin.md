@@ -42,11 +42,10 @@ Bitcoin = Ledger – Trust + Cryptography
 Let’s imagine a group of friends, X, Y, Z. These friends often lend each other money. They decide to come up with a list(ledger) that holds transactions for each payment, so they can observe who lent money to whom and how much. Initialy, they all have $50. To be able to write into this list, they all have to use their signature(digital signature) in order to prove that they are who they claim to be. 
 Here are some transactions between them;
 
+{% highlight javascript linenos %}
 X pays $10 to Y.
-
-
 Y pays $20 to Z.
-
+{% endhighlight %}
 
 
 After these transactions, X has $40, Y has $40 and Z has $60. Bitcoin ledgers also works like this. It follows the transactions that are made in the list to calculate who has how much. Now X, Y and Z could be really good friends and agree on a consensus, but in real world, for a system to be enable reliable currency exchange, trust is the most important aspect to present. What if X decides to spent more than he/she has? What if Y decides to alter the ledger alltogether? Who controls the rules of adding new lines to the list?
@@ -73,23 +72,20 @@ Now, we have a system for authenticating as who we are(signatures) and we have a
 
 Bitcoin’s solution to this problem is to trust whichever ledger has the most computational work put into system. The idea is, if you use computational work as a basis for what to trust, you can make it so that fraudulent transactions and conflicting ledgers would require an infeasible amount of computation. Let’s dissect this sentences with an example. Imagine a ledger like this,
 
+{% highlight javascript linenos %}
 X pays $40 to Y.
-
 Y pays $30 to Z.
-
 Z pays $25 to T.
-
+{% endhighlight %}
 
 Whoever that broadcasted this ledger adds a special number at the end of the transaction like this. 
 
+{% highlight javascript linenos %}
 X pays $40 to Y.
-
 Y pays $30 to Z.
-
 Z pays $25 to T.
-
 7896245679645
-
+{% endhighlight %}
 
 And he/she claims that if you calculate the hash of this ledger, first 32 bits are all zeroes, like this.
 
