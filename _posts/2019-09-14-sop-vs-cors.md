@@ -36,7 +36,7 @@ There are some rules for changing origin from a subdomain to its parent domain, 
 ## Why, Same-Origin-Policy?
 
 
-HTTP requests that are sent from one origin to a different one are called cross-origin requests. SOP was implemented to prevent this kind of cross-origin requests because of potential security flaws like [CSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)), [Clickjacking](https://www.owasp.org/index.php/Clickjacking) etc. However, as web applications became more complicated and interconnected and tangled, need for cross-origin requests initiated by JavaScript became a necessity. To loosen the rules layed by Same-Origin-Policy and to enable cross-origin requests, standard for Cross-Origin Resource Sharing(CORS) was introduced.
+HTTP requests that are sent from one origin to a different one are called cross-origin requests. SOP was implemented to prevent this kind of cross-origin requests because of potential security flaws like [Clickjacking](https://www.owasp.org/index.php/Clickjacking) etc. However, as web applications became more complicated and interconnected and tangled, need for cross-origin requests initiated by JavaScript became a necessity. To loosen the rules layed by Same-Origin-Policy and to enable cross-origin requests, standard for Cross-Origin Resource Sharing(CORS) was introduced.
 
 ## How to make a CORS Request? More importantly, Why make a CORS Request?
 
